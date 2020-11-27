@@ -16,7 +16,7 @@ const items: DrawerItemProps[] = [
   { icon: "heart", label: "Favorite Outfits", screen: "FavoriteOutfits", color: "drawer1" },
   { icon: "user", label: "Edit Profile", screen: "EditProfile", color: "drawer2" },
   { icon: "clock", label: "Transaction History", screen: "TransactionHistory", color: "drawer3" },
-  { icon: "settings", label: "Notification Settings", screen: "FavoriteOutfits", color: "drawer4" },
+  { icon: "settings", label: "Notification Settings", screen: "Settings", color: "drawer4" },
   { icon: "log-out", label: "Logout", 
     onPress: (navigation) => navigation.dispatch(CommonActions.reset({
       index: 0,
@@ -44,7 +44,7 @@ const Drawer = () => {
           <Header 
             title="Menu"
             left={{ icon: 'x', onPress: () => navigation.dispatch(DrawerActions.closeDrawer()) }}
-            right={{ icon: 'shopping-bag', onPress: () => true }}
+            right={{ icon: 'shopping-bag', onPress: () => navigation.navigate("Cart") }}
             dark
           />
         </Box>
